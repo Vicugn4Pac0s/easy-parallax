@@ -1,11 +1,11 @@
-import {TweenMax} from "gsap";
+import { TweenMax } from "gsap";
 
 export default class {
   constructor() {
     let self = this;
     this.parallax_array = [];
     this.setScroll();
-    $(window).on('scroll', function() {
+    $(window).on("scroll", function () {
       self.setScroll();
       self.start();
     });
@@ -15,23 +15,28 @@ export default class {
   }
   start() {
     let self = this;
-    this.parallax_array.forEach(function(value, index, array) {
+    this.parallax_array.forEach(function (value, index, array) {
       let distance = self.Scroll_b - value.first;
       if (0 < distance && distance < value.last) {
-        var per = distance / value.last,
-          per = Math.floor(per * 100) / 100;
-  
+        let per, translate_y, target, cssStyle;
+        per = distance / value.last;
+        per = Math.floor(per * 100) / 100;
+        translate_y = -1 * value.parallax * per;
+
+        target = "." + value.id;
+        cssStyle = {
+          transform: "translateY(" + translate_y + "px)",
+        };
+
         if (value.is_firsttime) {
-          $("." + value.id).css({
-            transform: 'translateY(' + -1 * value.parallax * per + 'px)',
-          });
+          $(target).css(cssStyle);
           value.is_firsttime = false;
           return;
         }
         TweenMax.staggerTo(
-          "." + value.id,
+          target,
           0.6,
-          { transform: "translateY(" + -1 * value.parallax * per + "px)" },
+          cssStyle,
           0.1
         );
       }
