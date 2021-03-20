@@ -1,1 +1,1 @@
-# jQuery-Parallax
+# Easy-Parallax
