@@ -18,7 +18,7 @@ export default class {
     this.$_elements.each(function(index) {
       let Obj = {
         id: "parallax-" + index,
-        state: 0,
+        is_firsttime: true,
         first: $(this).offset().top,
         last: $(this).height() + wH,
         parallax: $(this).data('parallax') || $(this).height() + $(this).width(),

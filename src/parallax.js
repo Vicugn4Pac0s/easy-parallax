@@ -21,11 +21,11 @@ export default class {
         var per = distance / value.last,
           per = Math.floor(per * 100) / 100;
   
-        if (value.state === 0) {
+        if (value.is_firsttime) {
           $("." + value.id).css({
             transform: 'translateY(' + -1 * value.parallax * per + 'px)',
           });
-          value.state = 1;
+          value.is_firsttime = false;
           return;
         }
         TweenMax.staggerTo(
