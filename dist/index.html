@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Template JavaScript</title>
-</head>
-<body>
-  
-  <script src="./main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Parallax</title>
+
+    <style>
+      .sec {
+        background: #eee;
+        height: 2000px;
+      }
+      .sec__inner {
+        position: relative;
+        margin: 0 auto;
+        height: 100%;
+        max-width: 1000px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .square {
+        background: #000;
+        position: absolute;
+
+        height: 20px;
+        width: 20px;
+      }
+
+      .square-01 {
+        top: 60px;
+        left: 0;
+      }
+      .square-02 {
+        background: #999;
+        top: 100px;
+        left: 80px;
+        height: 200px;
+        width: 200px;
+      }
+
+      .square-03 {
+        background: #666;
+        top: 180px;
+        left: 200px;
+        height: 300px;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="sec" style="margin-top: 1000px">
+      <div class="sec__inner">
+        <h1>見出し</h1>
+
+        <div class="square square-01 js-para"></div>
+        <div class="square square-02 js-para"></div>
+        <div class="square square-03 js-para"></div>
+      </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
+    <script>
+      $(function() {
+        $('.js-para').parallax({});
+      });
+    </script>
+  </body>
 </html>
