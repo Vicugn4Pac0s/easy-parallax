@@ -26,7 +26,8 @@ export default class {
       $(this).addClass(Obj.id);
       self.parallax_array.push(Obj);
     });
-    this.Parallax.set(this.parallax_array);
+    this.Parallax.reset(this.parallax_array);
+    this.Parallax.parallax();
   }
   events() {
     let self = this;

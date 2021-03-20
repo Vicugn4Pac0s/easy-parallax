@@ -7,13 +7,10 @@ export default class {
     this.setScroll();
     $(window).on("scroll", function () {
       self.setScroll();
-      self.start();
+      self.parallax();
     });
   }
-  set(parallax_array) {
-    this.parallax_array = parallax_array;
-  }
-  start() {
+  parallax() {
     let self = this;
     this.parallax_array.forEach(function (value, index, array) {
       let distance = self.Scroll_b - value.first;
@@ -41,6 +38,9 @@ export default class {
         );
       }
     });
+  }
+  reset(parallax_array) {
+    this.parallax_array = parallax_array;
   }
   setScroll() {
     this.Scroll = $(window).scrollTop();
