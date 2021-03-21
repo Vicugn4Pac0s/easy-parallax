@@ -2,11 +2,13 @@ import Parallax from "./parallax";
 
 export default class {
   constructor($_elements, $, options = {}) {
-    let defaults = {};
-    this.settings = $.extend({}, defaults, options);
+    let defaults = {
+      'fadeIn': false,
+    };
+    this.options = $.extend({}, defaults, options);
     this.$_elements = $_elements;
     this.parallax_array = [];
-    this.Parallax = new Parallax();
+    this.Parallax = new Parallax(this.options);
 
     this.init();
     this.events();
@@ -26,6 +28,7 @@ export default class {
       $(this).addClass(Obj.id);
       self.parallax_array.push(Obj);
     });
+    if(this.options.fadeIn) this.$_elements.css({'opacity': '0'});
     this.Parallax.reset(this.parallax_array);
     this.Parallax.parallax();
   }

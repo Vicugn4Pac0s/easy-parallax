@@ -1,8 +1,9 @@
 import { TweenMax } from "gsap";
 
 export default class {
-  constructor() {
+  constructor(options) {
     let self = this;
+    this.options = options;
     this.parallax_array = [];
     this.setScroll();
     $(window).on("scroll", function () {
@@ -18,7 +19,7 @@ export default class {
         let per, translate_y, target, cssStyle;
         per = distance / value.last;
         translate_y = -1 * value.parallax * per;
-        translate_y  = Math.floor(translate_y);
+        translate_y = Math.floor(translate_y);
 
         target = "." + value.id;
         cssStyle = {
@@ -27,15 +28,14 @@ export default class {
 
         if (value.is_firsttime) {
           $(target).css(cssStyle);
+          if(self.options.fadeIn) {
+            let Tween = TweenMax.to(target, 1, { opacity: 1 });
+            Tween.delay(0);
+          }
           value.is_firsttime = false;
           return;
         }
-        TweenMax.staggerTo(
-          target,
-          0.6,
-          cssStyle,
-          0.1
-        );
+        TweenMax.staggerTo(target, 0.6, cssStyle, 0.1);
       }
     });
   }
