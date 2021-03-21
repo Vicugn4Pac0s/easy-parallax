@@ -7,8 +7,10 @@
 
     <style>
       .sec {
+        height: 120vh;
+      }
+      .sec.sec-02 {
         background: #eee;
-        height: 2000px;
       }
       .sec__inner {
         position: relative;
@@ -20,55 +22,130 @@
         justify-content: center;
         align-items: center;
       }
+      .sec__ttl {
+        position: relative;
+        z-index: 999;
+      }
 
       .square {
-        background: #000;
+        background: rgba(0, 0, 0, 0.5);
         position: absolute;
+      }
 
+      .square-2xs {
         height: 20px;
         width: 20px;
       }
-
-      .square-01 {
-        top: 60px;
-        left: 0;
+      .square-xs {
+        height: 50px;
+        width: 50px;
       }
-      .square-02 {
-        background: #999;
-        top: 100px;
-        left: 80px;
+      .square-s {
+        height: 100px;
+        width: 100px;
+      }
+      .square-m {
         height: 200px;
         width: 200px;
       }
+      .square-l {
+        height: 400px;
+        width: 400px;
+      }
+      .square-xl {
+        height: 600px;
+        width: 600px;
+      }
+      .square-2xl {
+        height: 800px;
+        width: 800px;
+      }
 
+      .square-01 {
+        top: 50%;
+        left: 0;
+      }
+      .square-02 {
+        top: 70%;
+        left: 80%;
+      }
       .square-03 {
-        background: #666;
-        top: 180px;
-        left: 200px;
-        height: 300px;
-        width: 300px;
+        top: 100%;
+        left: 50%;
+      }
+      .square-04 {
+        top: 33%;
+        left: 69%;
+      }
+      .square-05 {
+        top: 43%;
+        left: 42%;
+      }
+      .square-06 {
+        top: 76%;
+        left: 3%;
+      }
+      .square-07 {
+        top: 71%;
+        left: 89%;
+      }
+      .square-08 {
+        top: 88%;
+        left: 60%;
       }
     </style>
   </head>
   <body>
-
-    <div class="sec" style="margin-top: 1000px">
+    <section class="sec sec-01">
       <div class="sec__inner">
-        <h1>見出し</h1>
+        <h1 class="sec__ttl">Easy Parallax</h1>
 
-        <div class="square square-01 js-para"></div>
-        <div class="square square-02 js-para"></div>
-        <div class="square square-03 js-para"></div>
+        <div class="square square-01 square-2xs js-para"></div>
+        <div class="square square-02 square-m js-para"></div>
+        <div class="square square-03 square-xs js-para"></div>
+        <div class="square square-04 square-s js-para"></div>
+        <div class="square square-05 square-xs js-para"></div>
+        <div class="square square-06 square-l js-para"></div>
+        <div class="square square-07 square-2xs js-para"></div>
+        <div class="square square-08 square-2xs js-para"></div>
       </div>
-    </div>
+    </section>
 
+    <section class="sec sec-02">
+      <div class="sec__inner">
+        <h1 class="sec__ttl">Easy Parallax</h1>
 
+        <div class="square square-01 square-2xs js-para"></div>
+        <div class="square square-02 square-m js-para"></div>
+        <div class="square square-03 square-xs js-para"></div>
+        <div class="square square-04 square-s js-para"></div>
+        <div class="square square-05 square-xs js-para"></div>
+        <div class="square square-06 square-l js-para"></div>
+        <div class="square square-07 square-2xs js-para"></div>
+        <div class="square square-08 square-2xs js-para"></div>
+      </div>
+    </section>
+
+    <section class="sec sec-03">
+      <div class="sec__inner">
+        <h1 class="sec__ttl">Easy Parallax</h1>
+
+        <div class="square square-01 square-2xs js-para"></div>
+        <div class="square square-02 square-m js-para"></div>
+        <div class="square square-03 square-xs js-para"></div>
+        <div class="square square-04 square-s js-para"></div>
+        <div class="square square-05 square-xs js-para"></div>
+        <div class="square square-06 square-l js-para"></div>
+        <div class="square square-07 square-2xs js-para"></div>
+        <div class="square square-08 square-2xs js-para"></div>
+      </div>
+    </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./easy-parallax.js"></script>
     <script>
-      $(function() {
-        $('.js-para').easyParallax({});
+      $(function () {
+        $(".js-para").easyParallax({});
       });
     </script>
   </body>
