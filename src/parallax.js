@@ -17,8 +17,8 @@ export default class {
       if (0 < distance && distance < value.last) {
         let per, translate_y, target, cssStyle;
         per = distance / value.last;
-        per = Math.floor(per * 100) / 100;
         translate_y = -1 * value.parallax * per;
+        translate_y  = Math.floor(translate_y * 100) / 100;
 
         target = "." + value.id;
         cssStyle = {
