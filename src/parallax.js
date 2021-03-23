@@ -6,7 +6,15 @@ export default class {
     this.options = options;
     this.parallax_array = [];
     this.setScroll();
+
+    let flag = 0;
     $(window).on("scroll", function () {
+      if (flag) return;
+      flag = 1;
+      setTimeout(function () {
+        flag = 0;
+      }, 50);
+      console.log('scroll')
       self.setScroll();
       self.parallax();
     });
