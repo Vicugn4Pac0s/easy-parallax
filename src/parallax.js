@@ -28,7 +28,7 @@ export default class {
 
         if (value.is_firsttime) {
           $(target).css(cssStyle);
-          if(self.options.fadeIn) {
+          if (self.options.fadeIn) {
             let Tween = TweenMax.to(target, 1, { opacity: 1 });
             Tween.delay(0);
           }
@@ -36,6 +36,29 @@ export default class {
           return;
         }
         TweenMax.staggerTo(target, 0.6, cssStyle, 0.1);
+      } else if (distance < 0) {
+        let target = "." + value.id;
+        TweenMax.staggerTo(
+          target,
+          0.6,
+          {
+            transform: "translateY(0px)",
+          },
+          0.1
+        );
+      } else if (value.last < distance) {
+        let target = "." + value.id;
+        let translate_y;
+        translate_y = -1 * value.parallax * 1;
+        translate_y = Math.floor(translate_y);
+        TweenMax.staggerTo(
+          target,
+          0.6,
+          {
+            transform: "translateY(" + translate_y + "px)",
+          },
+          0.1
+        );
       }
     });
   }
