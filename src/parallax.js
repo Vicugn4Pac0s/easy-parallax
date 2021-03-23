@@ -13,8 +13,7 @@ export default class {
       flag = 1;
       setTimeout(function () {
         flag = 0;
-      }, 50);
-      console.log('scroll')
+      }, 35);
       self.setScroll();
       self.parallax();
     });
