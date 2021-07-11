@@ -7,7 +7,7 @@
 
     <style>
       .sec {
-        height: 120vh;
+        height: 100vh;
       }
       .sec__inner {
         position: relative;
@@ -175,7 +175,15 @@
 
     <section class="sec sec--03">
       <div class="sec__inner">
-        <h1 class="sec__ttl">Easy Parallax</h1>
+        <div class="sec__body">
+          <h1 class="sec__ttl">パララックス要素の設定</h1>
+
+          <pre><code>
+    &lt;div class="square js-para" data-parallax="400"&gt;&lt;/div&gt;
+          </code></pre>
+
+          <p class="sec__txt">data-parallax="数値"で、各パララックス要素のスピード調整ができます。</p>
+        </div>
 
         <div class="square square-01 square-2xs js-para"></div>
         <div class="square square-02 square-m js-para"></div>
