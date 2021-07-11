@@ -9,9 +9,6 @@
       .sec {
         height: 120vh;
       }
-      .sec.sec-02 {
-        background: #f9f9f9;
-      }
       .sec__inner {
         position: relative;
         margin: 0 auto;
@@ -22,9 +19,25 @@
         justify-content: center;
         align-items: center;
       }
-      .sec__ttl {
+      .sec__body {
         position: relative;
+        width: 100%;
         z-index: 999;
+      }
+      .sec__ttl {
+        text-align: center;
+      }
+      .sec__txt {
+        font-size: 14px;
+        line-height: 1.8;
+        margin: 20px 0;
+      }
+
+      .sec.sec--01 .sec__body {
+        text-align: center;
+      }
+      .sec.sec--02 {
+        background: #f9f9f9;
       }
 
       .square {
@@ -62,51 +75,57 @@
       }
 
       .square-01 {
-        background: #DD9611;
+        background: #dd9611;
         top: 50%;
         left: 0;
       }
       .square-02 {
-        background: #F1D001;
+        background: #f1d001;
         top: 70%;
         left: 80%;
       }
       .square-03 {
-        background: #65ACE4;
+        background: #65ace4;
         top: 100%;
         left: 50%;
       }
       .square-04 {
-        background: #945F9F;
+        background: #945f9f;
         top: 33%;
         left: 69%;
       }
       .square-05 {
-        background: #C83940;
+        background: #c83940;
         top: 43%;
         left: 42%;
       }
       .square-06 {
-        background: #9FC239;
+        background: #9fc239;
         top: 76%;
-        left: 3%;
+        left: -16%;
       }
       .square-07 {
-        background: #D06D8C;
+        background: #d06d8c;
         top: 71%;
         left: 89%;
       }
       .square-08 {
-        background: #FEEF01;
+        background: #feef01;
         top: 88%;
         left: 60%;
       }
     </style>
   </head>
   <body>
-    <section class="sec sec-01">
+    <section class="sec sec--01">
       <div class="sec__inner">
-        <h1 class="sec__ttl">Easy Parallax</h1>
+        <div class="sec__body">
+          <h1 class="sec__ttl">Easy Parallax</h1>
+          <p class="sec__txt">
+            「Easy
+            Parallax」は、簡単にパララックスが実装できるjQueryプラグインです。
+          </p>
+        </div>
 
         <div class="square square-01 square-2xs js-para"></div>
         <div class="square square-02 square-m js-para"></div>
@@ -119,9 +138,28 @@
       </div>
     </section>
 
-    <section class="sec sec-02">
+    <section class="sec sec--02">
       <div class="sec__inner">
-        <h1 class="sec__ttl">Easy Parallax</h1>
+        <div class="sec__body">
+          <h1 class="sec__ttl">使い方</h1>
+          <pre><code>
+            &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"&gt;&lt;/script&gt;
+            &lt;script src="./js/easy-parallax.js"&gt;&lt;/script&gt;
+          </code></pre>
+          <p class="sec__txt">
+            EasyParallaxはjQueryプラグインのため、jQueryを先に読み込む必要があります。<br />head内に、jQuery→jQueryAnchorScrollの順で読み込んでください。
+          </p>
+
+          <pre><code>
+            $(function () {
+              $(".js-para").easyParallax({
+                fadeIn: true,
+              });
+            });
+          </code></pre>
+          <p class="sec__txt">
+          </p>
+        </div>
 
         <div class="square square-01 square-2xs js-para"></div>
         <div class="square square-02 square-m js-para"></div>
@@ -134,7 +172,7 @@
       </div>
     </section>
 
-    <section class="sec sec-03">
+    <section class="sec sec--03">
       <div class="sec__inner">
         <h1 class="sec__ttl">Easy Parallax</h1>
 
@@ -154,9 +192,23 @@
     <script>
       $(function () {
         $(".js-para").easyParallax({
-          'fadeIn': true,
+          fadeIn: true,
         });
       });
     </script>
+
+    <!-- ソースコード装飾表示 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>
+      // ハイライトを実行
+      hljs.initHighlightingOnLoad();
+
+      // <pre><code></code></pre>（メモ：ソースコードはこれでくくる）
+    </script>
+    <!-- ソースコード装飾表示 End -->
   </body>
 </html>
