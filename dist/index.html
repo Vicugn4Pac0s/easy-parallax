@@ -143,22 +143,22 @@
         <div class="sec__body">
           <h1 class="sec__ttl">使い方</h1>
           <pre><code>
-            &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"&gt;&lt;/script&gt;
-            &lt;script src="./js/easy-parallax.js"&gt;&lt;/script&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="./js/easy-parallax.js"&gt;&lt;/script&gt;
           </code></pre>
           <p class="sec__txt">
             EasyParallaxはjQueryプラグインのため、jQueryを先に読み込む必要があります。<br />head内に、jQuery→jQueryAnchorScrollの順で読み込んでください。
           </p>
 
           <pre><code>
-            $(function () {
-              $(".js-para").easyParallax({
-                fadeIn: true,
-              });
-            });
+    $(function () {
+      $(".js-para").easyParallax({
+        fadeIn: true, // trueの場合、パララックス要素をfadeInします
+      });
+    });
           </code></pre>
           <p class="sec__txt">
-            $(elements).easyParallax({}) で初期設定します。
+            $("elements").easyParallax({}) で初期設定します。
           </p>
         </div>
 
